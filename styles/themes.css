@@ -1,28 +1,28 @@
 /* Theme tokens - Light & Dark mode */
 :root[data-theme="light"] {
   /* Colors */
-  --bg: #ffffff;
-  --fg: #1a1a1a;
-  --bg-secondary: #f8f9fa;
-  --border: #e1e4e8;
+  --bg: #e6ade1;
+  --fg: #000000;
+  --bg-secondary: #376847;
+  --border: #376847;
   --shadow: rgba(0, 0, 0, 0.08);
   --shadow-lg: rgba(0, 0, 0, 0.12);
   
   /* Accent colors */
-  --primary: #3b82f6;
-  --primary-hover: #2563eb;
+  --primary: #376847;
+  --primary-hover: #376847;
   --primary-light: #dbeafe;
   --success: #10b981;
   --warning: #f59e0b;
   --danger: #ef4444;
   
   /* Text */
-  --text-primary: #1a1a1a;
-  --text-secondary: #6b7280;
-  --text-muted: #9ca3af;
+  --text-primary: #ffffff;
+  --text-secondary: #ffffff;
+  --text-muted: #f3f3f3;
   
   /* Interactive states */
-  --hover-bg: #f3f4f6;
+  --hover-bg: #376847;
   --active-bg: #e5e7eb;
 }
 
