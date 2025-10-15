@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "projects": [
+    {
+      "id": "example-1",
+      "title": "Portfolio Website v2",
+      "description": "Rebuilt personal portfolio with focus on performance and accessibility.",
+      "stack": ["HTML", "CSS", "JavaScript"],
+      "tags": ["portfolio", "responsive"],
+      "status": "Done",
+      "createdAt": "2024-01-15T10:00:00.000Z",
+      "updatedAt": "2024-02-20T14:30:00.000Z",
+      "startDate": "2024-01-15",
+      "endDate": "2024-02-20",
+      "links": {
+        "github": "https://github.com/HINTT/portfolio-v2",
+        "live": "https://portfolio.example.com"
+      },
+      "attachments": []
+    },
+    {
+      "id": "example-2",
+      "title": "Task Manager App",
+      "description": "Vanilla JS task management with localStorage persistence.",
+      "stack": ["JavaScript", "LocalStorage", "CSS Grid"],
+      "tags": ["productivity", "spa"],
+      "status": "In Progress",
+      "createdAt": "2024-03-01T09:00:00.000Z",
+      "updatedAt": "2024-03-15T16:45:00.000Z",
+      "startDate": "2024-03-01",
+      "endDate": "",
+      "links": {
+        "github": "https://github.com/HINTT/task-manager",
+        "live": ""
+      },
+      "attachments": []
+    },
+    {
+      "id": "example-3",
+      "title": "Weather Dashboard",
+      "description": "Real-time weather data with geolocation and API integration.",
+      "stack": ["JavaScript", "Fetch API", "OpenWeather"],
+      "tags": ["api", "data-viz"],
+      "status": "Done",
+      "createdAt": "2024-02-10T11:30:00.000Z",
+      "updatedAt": "2024-02-28T10:15:00.000Z",
+      "startDate": "2024-02-10",
+      "endDate": "2024-02-28",
+      "links": {
+        "github": "https://github.com/HINTT/weather-dashboard",
+        "live": "https://weather.example.com"
+      },
+      "attachments": []
+    },
+    {
+      "id": "example-4",
+      "title": "Learning Backend Basics",
+      "description": "Exploring Node.js, Express, and RESTful API design.",
+      "stack": ["Node.js", "Express", "REST"],
+      "tags": ["backend", "learning"],
+      "status": "Planned",
+      "createdAt": "2024-03-20T08:00:00.000Z",
+      "updatedAt": "2024-03-20T08:00:00.000Z",
+      "startDate": "",
+      "endDate": "",
+      "links": {
+        "github": "",
+        "live": ""
+      },
+      "attachments": []
+    },
+    {
+      "id": "example-5",
+      "title": "Accessibility Audit Tool",
+      "description": "Browser extension to check WCAG compliance on web pages.",
+      "stack": ["JavaScript", "Web Extensions API", "ARIA"],
+      "tags": ["accessibility", "tooling"],
+      "status": "Planned",
+      "createdAt": "2024-03-25T13:00:00.000Z",
+      "updatedAt": "2024-03-25T13:00:00.000Z",
+      "startDate": "",
+      "endDate": "",
+      "links": {
+        "github": "",
+        "live": ""
+      },
+      "attachments": []
+    }
+  ],
+  "resume": {
+    "name": "Your Name",
+    "title": "Front-End Developer",
+    "summary": "Focused on accessible UI, performance, and clean vanilla JavaScript.",
+    "skills": ["HTML", "CSS", "JavaScript", "Git", "Responsive Design", "WCAG AA"],
+    "experience": [],
+    "education": [],
+    "spotlightProjectIds": []
+  },
+  "settings": {
+    "theme": "light",
+    "githubUrl": "https://github.com/HINTT"
+  },
+  "motivation": {
+    "favorites": [],
+    "affirmations": [],
+    "streak": {
+      "days": 0,
+      "lastDate": null
+    }
+  }
+}

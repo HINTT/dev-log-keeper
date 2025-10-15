@@ -1,0 +1,66 @@
+/* Theme tokens - Light & Dark mode */
+:root[data-theme="light"] {
+  /* Colors */
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --bg-secondary: #f8f9fa;
+  --border: #e1e4e8;
+  --shadow: rgba(0, 0, 0, 0.08);
+  --shadow-lg: rgba(0, 0, 0, 0.12);
+  
+  /* Accent colors */
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --primary-light: #dbeafe;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  
+  /* Text */
+  --text-primary: #1a1a1a;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+  
+  /* Interactive states */
+  --hover-bg: #f3f4f6;
+  --active-bg: #e5e7eb;
+}
+
+:root[data-theme="dark"] {
+  /* Colors */
+  --bg: #0f1419;
+  --fg: #e8eaed;
+  --bg-secondary: #1a1f2e;
+  --border: #2d3748;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --shadow-lg: rgba(0, 0, 0, 0.5);
+  
+  /* Accent colors */
+  --primary: #60a5fa;
+  --primary-hover: #3b82f6;
+  --primary-light: #1e3a8a;
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger: #f87171;
+  
+  /* Text */
+  --text-primary: #e8eaed;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  
+  /* Interactive states */
+  --hover-bg: #1f2937;
+  --active-bg: #374151;
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dev Journey Hub — Workspace</title>
+  <meta name="description" content="Your development workspace - manage projects, track progress, and showcase your skills." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/themes.css">
+  <link rel="stylesheet" href="./styles/base.css">
+  <link rel="stylesheet" href="./styles/layout.css">
+  <link rel="stylesheet" href="./styles/components.css">
+  <link rel="stylesheet" href="./styles/board.css">
+  <link rel="stylesheet" href="./styles/calendar.css">
+  <link rel="stylesheet" href="./styles/resume.css">
+  <link rel="stylesheet" href="./styles/print.css" media="print">
+</head>
+<body>
+  <header class="app-header">
+    <div class="left">
+      <button class="button ghost" onclick="history.back()" aria-label="Back to Landing">←</button>
+      <h1>Dev Journey Hub</h1>
+    </div>
+    <div class="center">
+      <input id="globalSearch" class="input" placeholder="Search projects, tags, stack…" aria-label="Global search">
+    </div>
+    <div class="right">
+      <button class="button" id="btnNewProject">+ New Project</button>
+      <button class="button ghost" id="btnImport">Import</button>
+      <button class="button ghost" id="btnExport">Export</button>
+      <a class="button ghost" id="btnGitHub" href="https://github.com/HINTT" target="_blank" rel="noopener" title="Open GitHub">GitHub</a>
+      <button class="button ghost" id="btnGitHubSet" title="Set GitHub link">⚙️</button>
+      <button class="button ghost" data-action="toggle-theme" aria-pressed="false" aria-label="Toggle theme">🌓</button>
+    </div>
+  </header>
+
+  <nav class="tabbar" role="tablist" aria-label="Workspace sections">
+    <button class="tab active" role="tab" aria-selected="true" data-tab="projects">Projects</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="resume">Resume</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="calendar">Calendar</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="motivation">Motivation</button>
+  </nav>
+
+  <main>
+    <!-- Projects -->
+    <section id="tab-projects" role="tabpanel">
+      <div class="toolbar">
+        <div class="view-switch">
+          <button class="chip active" data-view="board">Board</button>
+          <button class="chip" data-view="list">List</button>
+          <button class="chip" data-view="gallery">Gallery</button>
+        </div>
+        <div class="filters">
+          <select id="sortSelect" class="input">
+            <option value="created-asc">Oldest → Most Recent</option>
+            <option value="created-desc">Most Recent → Oldest</option>
+            <option value="updated-desc">Recently Updated</option>
+            <option value="alpha-asc">A → Z</option>
+          </select>
+          <input id="tagFilter" class="input" placeholder="Filter by tag…">
+          <input id="stackFilter" class="input" placeholder="Filter by stack…">
+        </div>
+      </div>
+
+      <div id="boardView" class="kanban" aria-label="Kanban Board">
+        <div class="column" data-status="Planned" aria-label="Planned">
+          <div class="column-header">Planned</div>
+          <div class="column-body" role="list"></div>
+        </div>
+        <div class="column" data-status="In Progress" aria-label="In Progress">
+          <div class="column-header">In Progress</div>
+          <div class="column-body" role="list"></div>
+        </div>
+        <div class="column" data-status="Done" aria-label="Done">
+          <div class="column-header">Done</div>
+          <div class="column-body" role="list"></div>
+        </div>
+      </div>
+
+      <div id="listView" class="hidden"></div>
+      <div id="galleryView" class="hidden grid"></div>
+    </section>
+
+    <!-- Resume -->
+    <section id="tab-resume" class="hidden" role="tabpanel">
+      <div class="resume card resume-printable" data-print="resume">
+        <div class="resume-header">
+          <h1 id="resName" contenteditable="true" spellcheck="false">Your Name</h1>
+          <p id="resTitle" contenteditable="true">Front-End Developer</p>
+          <p id="resSummary" contenteditable="true" class="muted">Short, value-packed summary…</p>
+        </div>
+        <div class="resume--split">
+          <section class="section">
+            <h2>Experience</h2>
+            <ul id="resExperience" class="editable-list"></ul>
+            <button class="button ghost small" id="addExperience">+ Add Experience</button>
+
+            <h2>Projects (Spotlight)</h2>
+            <div id="resSpotlight"></div>
+          </section>
+          <aside class="section">
+            <h2>Skills</h2>
+            <ul id="resSkills" class="chip-list" contenteditable="true"></ul>
+            <h2>Education</h2>
+            <ul id="resEducation" class="editable-list"></ul>
+            <button class="button ghost small" id="addEducation">+ Add Education</button>
+          </aside>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="button" onclick="window.print()">Print / Export PDF</button>
+      </div>
+    </section>
+
+    <!-- Calendar -->
+    <section id="tab-calendar" class="hidden" role="tabpanel">
+      <div class="calendar-grid card" id="calendarRoot"></div>
+      <div class="sidepanel card" id="calendarSidepanel" aria-live="polite"></div>
+      <div class="timeline card" id="timelineRoot"></div>
+    </section>
+
+    <!-- Motivation -->
+    <section id="tab-motivation" class="hidden" role="tabpanel">
+      <div class="grid">
+        <div class="card">
+          <h2>Daily Quote</h2>
+          <p id="quoteText" class="xl"></p>
+          <div class="row">
+            <button class="button" id="newQuote">New Quote</button>
+            <button class="button ghost" id="saveQuote">Save to My Favorites</button>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Affirmations</h2>
+          <textarea id="affirmationInput" class="input" rows="3" placeholder="Write an affirmation…"></textarea>
+          <div class="row">
+            <button class="button" id="addAffirmation">Add</button>
+            <button class="button ghost" id="clearAffirmations">Clear All</button>
+          </div>
+          <ul id="affirmationList" class="bullet-list"></ul>
+        </div>
+        <div class="card">
+          <h2>Consistency Streak</h2>
+          <p>Days checked in: <strong id="streakCount">0</strong></p>
+          <button class="button" id="checkIn">Check-in Today ✅</button>
+          <p class="muted" id="lastCheckIn"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modals & toasts -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle"></div>
+  <div id="toast" class="toast-container" aria-live="polite"></div>
+
+  <script type="module" src="./js/theme.js"></script>
+  <script type="module" src="./js/utils/storage.js"></script>
+  <script type="module" src="./js/state/store.js"></script>
+  <script type="module" src="./js/ui/tabs.js"></script>
+  <script type="module" src="./js/ui/dialog.js"></script>
+  <script type="module" src="./js/ui/toast.js"></script>
+  <script type="module" src="./js/projects/board.js"></script>
+  <script type="module" src="./js/calendar/timeline.js"></script>
+  <script type="module" src="./js/workspace.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+/* Resume/Portfolio styles */
+
+.resume {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: var(--bg);
+}
+
+.resume-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.resume-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.resume-header h1:focus,
+.resume-header p:focus,
+[contenteditable]:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.resume-header p {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.resume--split {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+}
+
+.resume .section {
+  margin-bottom: 2rem;
+}
+
+.resume .section h2 {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.resume .editable-list li {
+  background-color: transparent;
+  border: none;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.resume .chip-list {
+  padding: 1rem 0;
+}
+
+.resume .chip-list .chip {
+  margin-bottom: 0.5rem;
+}
+
+#resSpotlight {
+  margin-top: 1rem;
+}
+
+#resSpotlight .card {
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .resume--split {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .resume-header h1 {
+    font-size: 2rem;
+  }
+}
